@@ -347,14 +347,24 @@ body {
   border-radius: 8px;
   }
 
+.language__dropdown li { 
+  margin: 0 0 1px;
+  }
+
+.language__dropdown li:last-child { 
+  margin: 0;
+  }
+
 .language__dropdown a { 
   display: block;
   padding: 8px 6px;
   font-size: 14px;
   line-height: 14px;
   border-radius: 6px;
+  transition: .3s all;
   }
 
+.language__dropdown a:hover,
 .language__dropdown .active a { 
   color: #fff;
   background: #E0BB7F;
