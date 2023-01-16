@@ -576,6 +576,7 @@ body {
   border: 1px solid #1F336D;
   border-radius: 100%;
   transition: .3s background;
+  cursor: pointer;
   }
 
 .info-panel__item:hover { 
@@ -1287,6 +1288,10 @@ input[type="range"]::-moz-range-thumb {
   color: #fff;
   }
 
+.big-title_indent-bt-big { 
+  margin: 0 0 80px;
+  }
+
 /* title-panel */
 .title-panel { 
   position: relative;
@@ -1581,6 +1586,45 @@ input[type="range"]::-moz-range-thumb {
 
 .estate-item:hover .info-panel__item_compare:after { 
   opacity: 1;
+  }
+
+.info-panel__item_add-button.active { 
+  background: #1F336D;
+  }
+
+.estate-item:hover .info-panel__item_add-button.active { 
+  background: #fff;
+  }
+
+.info-panel__item_add-button.active:before { 
+  opacity: 0;
+  }
+
+.estate-item:hover .info-panel__item_add-button.active:before { 
+  opacity: 1;
+  }
+
+.info-panel__item_add-button.active:after { 
+  opacity: 1;
+  }
+
+.estate-item:hover .info-panel__item_add-button.active:after { 
+  opacity: 0;
+  }
+
+/* delete-btn */
+.delete-btn { 
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+  background: url(../img/bg/delete.svg) center no-repeat;
+  background-size: 100%;
+  transition: .3s opacity;
+  cursor: pointer;
+  }
+
+.delete-btn:hover { 
+  opacity: 0.8;
   }
 
 /* estate-item__mov-panel */
@@ -2483,7 +2527,7 @@ input[type="range"]::-moz-range-thumb {
 
 /* bread-crumbs */
 .bread-crumbs { 
-  margin: 0 0 20px;
+  margin: 0 0 40px;
   }
 
 .bread-crumbs ul { 
@@ -3354,4 +3398,25 @@ input[type="range"]::-moz-range-thumb {
 .footer__nav li { 
   font-size: 14px;
   line-height: 14px;
+  }
+
+/* hystmodal */
+#callback .hystmodal__window {
+  width: 100%;
+  max-width: 1296px; 
+  background: none;
+  }
+
+button.hystmodal__close { 
+  width: 20px;
+  height: 20px;
+  top: 40px;
+  right: 40px;
+  background: url(../img/bg/close-modal.svg) center no-repeat;
+  background-size: 100%;
+  transition: .3s opacity;
+  }
+
+button.hystmodal__close:hover { 
+  opacity: 0.6;
   }

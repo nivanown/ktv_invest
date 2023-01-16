@@ -135,8 +135,8 @@ const swiper = new Swiper(".gl-select__scroll", {
     input.addEventListener("keydown", mask, false);
 });
 
-/*- info-panel__item -*/
-let buttons = document.getElementsByClassName("info-panel__item");
+/*- info-panel__item_add-button -*/
+let buttons = document.getElementsByClassName("info-panel__item_add-button");
 for(let i = 0; i < buttons.length; i++) {
   buttons.item(i).addEventListener("click", doClickButton);
 }
@@ -250,4 +250,16 @@ accordion.forEach((element) => {
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   });
+});
+
+/*- modal -*/
+const myModal = new HystModal({
+    closeOnEsc: true,
+    backscroll: true,
+    afterClose: function(modal){
+        let videoframe = modal.openedWindow.querySelector('iframe');
+        if(videoframe){
+            videoframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+        }
+    },
 });
