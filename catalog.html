@@ -2512,11 +2512,47 @@
                             </div>
                         </div>
                         <div class="consultant">
-                            <h3 class="consultant__title">Нужна помощь? Поможет косультант</h3>
-                            <div class="consultant__photo">
-                                <img src="img/src/consultant-img.png" alt="photo">
+                            <div class="consultant__in consultant_step-1 active">
+                                <h3 class="consultant__title">Нужна помощь? Поможет косультант</h3>
+                                <div class="consultant__photo">
+                                    <img src="img/src/consultant-img.png" alt="photo">
+                                </div>
+                                <button class="btn btn_full-size btn_text-bold">Заказать звонок</button>
                             </div>
-                            <a href="#" class="btn btn_full-size btn_text-bold">Заказать звонок</a>
+                            <div class="consultant__in consultant_step-2">
+                                <h3 class="consultant__title">Нужна помощь? Поможет косультант</h3>
+                                <div class="consultant__form">
+                                    <form>
+                                        <fieldset class="consultant__form_indent-bt-sm">
+                                            <label for="con-name">Имя</label>
+                                            <input id="con-name" type="text" name="con-name" placeholder="Тимур Уваров">
+                                        </fieldset>
+                                        <fieldset class="consultant__form_indent-bt-sm">
+                                            <label for="con-phone">Телефон</label>
+                                            <input id="con-phone" type="text" name="con-phone" placeholder="+92 1234567">
+                                        </fieldset>
+                                        <fieldset>
+                                            <label for="con-mail">Email</label>
+                                            <input id="con-mail" type="email" name="con-mail" placeholder="client@client.ru">
+                                        </fieldset>
+                                        <fieldset>
+                                            <div class="gl-checkbox">
+                                                <input type="checkbox" name="agreement" checked="checked" id="con-agreement">
+                                                <label for="con-agreement">Я прочитал и соглашаюсь с <a href="#">правилами</a> об Обработке персональных данных</label>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset>
+                                            <button class="btn btn_full-size btn_text-bold" type="submit">Заказать звонок</button>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="consultant__in consultant_step-3">
+                                <h3 class="consultant__title">Готово! Скоро мы с вами свяжемся</h3>
+                                <div class="consultant__photo consultant__photo_big-size">
+                                    <img src="img/src/consultant-img.png" alt="photo">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="catalog-panel">

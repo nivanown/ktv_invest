@@ -263,3 +263,14 @@ const myModal = new HystModal({
         }
     },
 });
+
+/*- consultant_steps -*/
+$('.consultant_step-1 .btn').click(function(e) {
+  $('.consultant_step-2').addClass('active');
+  $('.consultant_step-1').removeClass('active');
+});
+
+$('.consultant_step-2 .btn').click(function(e) {
+  $('.consultant_step-3').addClass('active');
+  $('.consultant_step-2').removeClass('active');
+});
