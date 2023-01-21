@@ -697,6 +697,11 @@ body {
   font-weight: 600;
   }
 
+.btn_transparent-color { 
+  background: #fff;
+  box-shadow: 0 0 0 1px #1F336D inset;
+  }
+
 /* estate-settings */
 .estate-settings { 
   position: relative;
@@ -883,6 +888,41 @@ input[type='tel']::-webkit-input-placeholder,
 input[type='text']::-webkit-input-placeholder,
 input[type='email']::-webkit-input-placeholder,
 input[type='password']::-webkit-input-placeholder {
+  color: #8f99b6;
+  opacity: 1;
+  outline: none;
+  }
+
+/* textarea */
+textarea { 
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  height: 240px;
+  color: #8f99b6;
+  font-size: 16px;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 400;
+  border: 1px solid #1F336D;
+  background: #fff;
+  box-shadow: none !important;
+  border-radius: 4px;
+  transition: .3s border-color;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+  outline: none;
+  overflow: auto;
+  }
+
+textarea::-moz-placeholder { 
+  color: #8f99b6;
+  opacity: 1;
+  outline: none;
+  }
+
+textarea::-webkit-placeholder { 
   color: #8f99b6;
   opacity: 1;
   outline: none;
@@ -2240,11 +2280,11 @@ input[type="range"]::-moz-range-thumb {
   display: block;
   }
 
-.messengers li { 
+.consultation .messengers li { 
   margin: 0 0 6px;
   }
 
-.messengers:last-child { 
+.consultation .messengers:last-child { 
   margin: 0;
   }
 
@@ -3313,6 +3353,16 @@ input[type="range"]::-moz-range-thumb {
   transition: 0.5s ease-in-out;
   }
 
+.accordion__content p {
+  color: #1F336D; 
+  font-size: 16px;
+  line-height: 22px;
+  }
+
+.accordion__content p:last-child { 
+  margin: 0;
+  }
+
 /* line */
 .line { 
   margin: 20px 0;
@@ -3528,6 +3578,373 @@ input[type="range"]::-moz-range-thumb {
 .page-nav .active a {
   color: #fff; 
   background: #1F336D;
+  }
+
+/* questions */
+.questions { 
+  position: relative;
+  padding: 40px 376px 40px 40px;
+  background: #fff;
+  box-shadow: 0px 4px 16px rgba(31, 51, 109, 0.2);
+  border-radius: 8px;
+  }
+
+.questions__form form { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  margin: 0 -20px;
+  }
+
+.questions__form fieldset { 
+  margin: 0;
+  padding: 0 20px;
+  width: 100%;
+  }
+
+.questions__form_d-flex { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+.questions__form .questions__form_sm-size { 
+  width: 50%;
+  }
+
+/* questions__list */
+.questions__list li { 
+  margin: 0 0 20px;
+  }
+
+.questions__list li:last-child { 
+  margin: 0;
+  }
+
+/* gl-checkbox */
+.questions__form fieldset:last-child .gl-checkbox { 
+  max-width: 420px;
+  }
+
+.answer-messengers { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+.answer-messengers dt {
+  color: #1F336D; 
+  font-size: 16px;
+  line-height: 16px;
+  }
+
+.answer-messengers .gl-checkbox { 
+  align-items: center;
+  }
+
+.answer-messengers .gl-checkbox input { 
+  margin: 0 5px 0 0;
+  }
+
+.answer-messengers .gl-checkbox input:checked { 
+  border-color: #E0BB7F; 
+  }
+
+.answer-messengers .gl-checkbox input:checked:before { 
+  background: #E0BB7F;
+  }
+
+.gl-checkbox__icon { 
+  position: relative;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+  }
+
+.gl-checkbox__icon:before { 
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  content: "";
+  transition: .3s opacity;
+  }
+
+.gl-checkbox__icon:after { 
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  content: "";
+  transition: .3s opacity;
+  }
+
+.answer-messengers .gl-checkbox input:checked + label .gl-checkbox__icon:before { 
+  opacity: 0;
+  }
+
+.answer-messengers .gl-checkbox input:checked + label .gl-checkbox__icon:after { 
+  opacity: 1;
+  }
+
+.gl-checkbox__icon_whatsapp:before { 
+  background: url(../img/bg/whatsapp-b.svg) center no-repeat;
+  background-size: 100%;
+  }
+
+.gl-checkbox__icon_whatsapp:after { 
+  background: url(../img/bg/whatsapp-y.svg) center no-repeat;
+  background-size: 100%;
+  }
+
+.gl-checkbox__icon_telegram:before { 
+  background: url(../img/bg/telegram-b.svg) center no-repeat;
+  background-size: 100%;
+  }
+
+.gl-checkbox__icon_telegram:after { 
+  background: url(../img/bg/telegram-y.svg) center no-repeat;
+  background-size: 100%;
+  }
+
+.gl-checkbox__icon_message:before { 
+  background: url(../img/bg/message-b.svg) center no-repeat;
+  background-size: 100%;
+  }
+
+.gl-checkbox__icon_message:after { 
+  background: url(../img/bg/message-y.svg) center no-repeat;
+  background-size: 100%;
+  }
+
+.gl-checkbox__icon_viber:before { 
+  background: url(../img/bg/viber-b.svg) center no-repeat;
+  background-size: 100%;
+  }
+
+.gl-checkbox__icon_viber:after { 
+  background: url(../img/bg/viber-y.svg) center no-repeat;
+  background-size: 100%;
+  }
+
+/* questions__photo */
+.questions__photo { 
+  position: absolute;
+  width: 245px;
+  right: 40px;
+  bottom: 0;
+  }
+
+.questions__photo img { 
+  width: 100%;
+  }
+
+/* team-info */
+.team-info { 
+  display: flex;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 16px rgba(31, 51, 109, 0.2);
+  border-radius: 8px;
+  }
+
+/* team-info__photo-wrap */
+.team-info__photo-wrap { 
+  flex-shrink: 0;
+  margin: 0 40px 0 0;
+  width: 240px;
+  }
+
+/* team-info__photo */
+.team-info__photo { 
+  margin: 0 0 20px;
+  }
+
+.team-info__photo img { 
+  width: 100%;
+  border-radius: 8px;
+  }
+
+/* team-info__btn-list */
+.team-info__btn-list li { 
+  margin: 0 0 10px;
+  }
+
+.team-info__btn-list li:last-child { 
+  margin: 0;
+  }
+
+/* team-info__description */
+.team-info__description { 
+  flex-grow: 1;
+  }
+
+/* team-info__md-panel */
+.team-info__md-panel { 
+  margin: 0 0 40px;
+  padding: 20px 0 0;
+  }
+
+.team-info .team-contacts { 
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px 140px;
+  }
+
+.team-info .team-contacts li { 
+  margin: 0;
+  }
+
+/* communications */
+.communications { 
+  display: flex;
+  align-items: center;
+  }
+
+.communications dt { 
+  margin: 0 20px 0 0;
+  color: #1F336D;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  }
+
+.team-info .communications dt { 
+  flex-shrink: 0;
+  margin: 0 15px 0 0;
+  width: 90px;
+  }
+
+/* team-info__description */
+.team-info__description p { 
+  color: #1F336D;
+  }
+
+.team-info__description p:last-child { 
+  margin: 0;
+  }
+
+/* user-form */
+.user-form { 
+  margin: 0 auto;
+  max-width: 416px;
+  padding: 8px 8px 20px;
+  background: #fff;
+  box-shadow: 0px 4px 16px rgba(31, 51, 109, 0.2);
+  border-radius: 8px;
+  }
+
+/* user-form__nav */
+.user-form__nav { 
+  margin: 0 0 20px;
+  }
+
+.user-form__nav ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 0 10px;
+  list-style: none;
+  }
+
+.user-form__nav a,
+.user-form__nav span { 
+  display: block;
+  padding: 14px;
+  color: #1F336D;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 16px;
+  background: #e9ebf0;
+  border-radius: 8px;
+  transition: .3s all;
+  }
+
+.user-form__nav a:hover,
+.user-form__nav .active span { 
+  color: #fff;
+  background: #1F336D;
+  }
+
+/* user-form__in */
+.user-form__in { 
+  padding: 0 12px;
+  }
+
+/* user-form form */
+.user-form fieldset:last-child { 
+  padding: 20px 0 0;
+  }
+
+/* phone-field */
+.phone-field { 
+  position: relative;
+  }
+
+.phone-field input { 
+  padding-right: 120px;
+  }
+
+.phone-field__link { 
+  position: absolute;
+  display: block;
+  padding: 13px 10px;
+  top: 0;
+  right: 0;
+  font-size: 14px;
+  line-height: 14px;
+  z-index: 3;
+  }
+
+/* password-field */
+.password-field { 
+  position: relative;
+  }
+
+.password-field input { 
+  padding-right: 50px;
+  }
+
+.password-field__btn { 
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+  font-size: 0;
+  background: url(../img/bg/show.svg) center no-repeat;
+  z-index: 3;
+  }
+
+/* user-form__link */
+.user-form__link { 
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  line-height: 16px;
+  }
+
+.user-form__link:after { 
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background: #1F336D;
+  content: "";
+  opacity: 0.4;
+  transition: .3s opacity;
+  }
+
+.user-form__link:hover:after {
+  opacity: 0;
   }
 
 /* site-nav */
