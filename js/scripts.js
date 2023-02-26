@@ -1,6 +1,6 @@
 ﻿/*- tabs -*/
-const tabs = document.querySelectorAll('.tabs__nav li')
-const tabContents = document.querySelectorAll('.tabs__item')
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContents = document.querySelectorAll('[data-tab-content]')
 
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
@@ -91,7 +91,7 @@ function checkboxDropdown(el) {
 checkboxDropdown('.gl-select');
 
 /*- gl-select__scroll -*/
-const swiper = new Swiper(".gl-select__scroll", {
+var swiper = new Swiper(".gl-select__scroll", {
   direction: "vertical",
   slidesPerView: "auto",
   freeMode: true,
@@ -99,6 +99,27 @@ const swiper = new Swiper(".gl-select__scroll", {
     el: ".gl-select__scroll .swiper-scrollbar",
   },
   mousewheel: true,
+});
+
+/*- gl-scroll -*/
+var swiper = new Swiper(".gl-scroll", {
+  direction: "vertical",
+  slidesPerView: "auto",
+  freeMode: true,
+  scrollbar: {
+    el: ".gl-scroll .swiper-scrollbar",
+  },
+  mousewheel: true,
+});
+
+/*- gallery-slider -*/
+var swiper = new Swiper(".gallery-slider", {
+  spaceBetween: 30,
+  effect: "fade",
+  pagination: {
+    el: ".gallery-slider .swiper-pagination",
+    clickable: true,
+  },
 });
 
 /*- phone-input -*/
@@ -136,7 +157,7 @@ const swiper = new Swiper(".gl-select__scroll", {
 });
 
 /*- info-panel__item_add-button -*/
-let buttons = document.getElementsByClassName("info-panel__item_add-button");
+let buttons = document.querySelectorAll(".info-panel__item_add-button, .sort-btn");
 for(let i = 0; i < buttons.length; i++) {
   buttons.item(i).addEventListener("click", doClickButton);
 }
@@ -254,14 +275,14 @@ accordion.forEach((element) => {
 
 /*- modal -*/
 const myModal = new HystModal({
-    closeOnEsc: true,
-    backscroll: true,
-    afterClose: function(modal){
-        let videoframe = modal.openedWindow.querySelector('iframe');
-        if(videoframe){
-            videoframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
-        }
-    },
+  closeOnEsc: true,
+  backscroll: true,
+  afterClose: function(modal){
+    let videoframe = modal.openedWindow.querySelector('iframe');
+    if(videoframe){
+        videoframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+    }
+  },
 });
 
 /*- consultant_steps -*/
@@ -274,3 +295,82 @@ $('.consultant_step-2 .btn').click(function(e) {
   $('.consultant_step-3').addClass('active');
   $('.consultant_step-2').removeClass('active');
 });
+
+/*- accordion -*/
+let comparison = document.querySelectorAll(".comparison__panel");
+
+comparison.forEach((comparisonItem) => {
+  comparisonItem.addEventListener("click", function () {
+    comparisonItem.classList.toggle("open");
+    const nextElement = comparisonItem.nextElementSibling;
+    nextElement.classList.toggle("open");
+  });
+});
+
+/*- global-slider -*/
+var swiper = new Swiper(".global-slider", {
+  loop: true,
+  slidesPerView: 24,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: ".global-slider__arrows .swiper-button-next",
+    prevEl: ".global-slider__arrows .swiper-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+    },
+    767: {
+      slidesPerView: 2,
+      spaceBetween: 24,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+    1326: {
+      slidesPerView: 4,
+      spaceBetween: 24,
+    },
+  },
+});
+
+/*- real-estate-slider -*/
+var swiper = new Swiper(".real-estate-slider__small", {
+  loop: true,
+  spaceBetween: 4,
+  slidesPerView: "auto",
+});
+
+var swiper2 = new Swiper(".real-estate-slider__big", {
+  loop: true,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".real-estate-slider__big .swiper-button-next",
+    prevEl: ".real-estate-slider__big .swiper-button-prev",
+  },
+  thumbs: {
+    swiper: swiper,
+  },
+});
+
+/*- mobile menu -*/
+let toggleBtn = document.querySelector('.menu-btn');
+let navBar = document.querySelector('.header__right-col');
+toggleBtn.addEventListener('click', function () {
+  toggleBtn.classList.toggle('open');
+  navBar.classList.toggle('open');
+});
+
+/*- main-navi -*/
+const iconUpDown = document.querySelectorAll(".main-nav_down-arrow a, .language span");
+iconUpDown.forEach(link => {
+  link.addEventListener("click", e => {
+    link.classList.toggle("active")
+    link.parentElement.classList.toggle("open");
+  })
+})
+
+/*- teams -*/
+var mixer = mixitup(".teams");
